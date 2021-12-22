@@ -1,0 +1,46 @@
+#bilgisayardan dört basamağında da farklı rakam bulunan dört basamaklı bir
+#sayı üretmesini isteyelim.
+
+for a in range(1,10):
+    for b in range(0,10):
+        if a!=b:
+            for c in range(0,10):
+                if b!=c and a!=c:
+                    for d in range(0,10):
+                        c!=d and b!=d and a!=d:
+                            sayi = str(a)+str(b)+str(c)+str(d)
+                            
+#kullanıcıdan rakamları farklı dört basamaklı bir sayı isteyelim.                           
+x = input("Lütfen dört basamaklı ve rakamları farklı bir sayı giriniz")
+
+#girilen bu sayıyı rakamları farklı mı diye kontrol edelim.
+
+if x[0] = str(0):
+    x = input("Lütfen dört basamaklı ve rakamları farklı bir sayı giriniz")
+
+elif x[0]=x[1] or x[0]=x[2] or x[0]=x[3]:
+    x = input("Lütfen dört basamaklı ve rakamları farklı bir sayı giriniz")
+    
+elif x[1]=x[2] or x[1]=x[3]:
+    x = input("Lütfen dört basamaklı ve rakamları farklı bir sayı giriniz")
+    
+elif x[2]=x[3]:
+    x = input("Lütfen dört basamaklı ve rakamları farklı bir sayı giriniz")
+
+#şimdi ise oyuncunun girdiği sayıyla bilgisayarın oluşturduğu sayıyı
+#karşılaştıralım.
+
+dogru_yer_syc = 0
+yanlis_yer_syc = 0
+
+if sayi == x:
+    dogru_yer_syc += 4
+
+elif sayi != x:
+    yanlis_yer_syc += 4
+
+elif x[
+    
+#bu son kısımda nasıl yapsam bilemedim ikisini karşılaştırma kısmını açıkçası
+    
+    

@@ -1,46 +1,57 @@
+def mastermind_4bas():
+    x=input("sayı giriniz")
 #bilgisayardan dört basamağında da farklı rakam bulunan dört basamaklı bir
 #sayı üretmesini isteyelim.
-
-for a in range(1,10):
-    for b in range(0,10):
-        if a!=b:
-            for c in range(0,10):
-                if b!=c and a!=c:
-                    for d in range(0,10):
-                        c!=d and b!=d and a!=d:
+    for a in range(1,10):
+        for b in range(0,10):
+            if a!=b:
+                for c in range(0,10):
+                    if b!=c and a!=c:
+                        for d in range(0,10):
+                            c!=d and b!=d and a!=d
                             sayi = str(a)+str(b)+str(c)+str(d)
                             
-#kullanıcıdan rakamları farklı dört basamaklı bir sayı isteyelim.                           
-x = input("Lütfen dört basamaklı ve rakamları farklı bir sayı giriniz")
 
 #girilen bu sayıyı rakamları farklı mı diye kontrol edelim.
 
-if x[0] = str(0):
-    x = input("Lütfen dört basamaklı ve rakamları farklı bir sayı giriniz")
+    if x[0] == 0:
+        raise Exception("girilen sayının rakamları aynı değil")
+        return mastermind_4bas()
 
-elif x[0]=x[1] or x[0]=x[2] or x[0]=x[3]:
-    x = input("Lütfen dört basamaklı ve rakamları farklı bir sayı giriniz")
+    elif x[0]==x[1] or x[0]==x[2] or x[0]==x[3]:
+        raise Exception("girilen sayının rakamları aynı değil")
+        return mastermind_4bas()
     
-elif x[1]=x[2] or x[1]=x[3]:
-    x = input("Lütfen dört basamaklı ve rakamları farklı bir sayı giriniz")
+    elif x[1]==x[2] or x[1]==x[3]:
+        raise Exception("girilen sayının rakamları aynı değil")
+        return mastermind_4bas()
     
-elif x[2]=x[3]:
-    x = input("Lütfen dört basamaklı ve rakamları farklı bir sayı giriniz")
+    elif x[2]==x[3]:
+        raise Exception("girilen sayının rakamları aynı değil")
+        return mastermind_4bas()
 
 #şimdi ise oyuncunun girdiği sayıyla bilgisayarın oluşturduğu sayıyı
 #karşılaştıralım.
 
-dogru_yer_syc = 0
-yanlis_yer_syc = 0
+    dogru_yer_syc = 0
+    yanlis_yer_syc = 0
 
-if sayi == x:
-    dogru_yer_syc += 4
+#sayi=1234
+    liste=[]
+    for i in len(int(sayi)):
+        liste.append(sayi[i])
+#liste=[1,2,3,4]
 
-elif sayi != x:
-    yanlis_yer_syc += 4
+    liste2=[]
+    for i in len(x):
+        liste2.append(x[i])
 
-elif x[
-    
-#bu son kısımda nasıl yapsam bilemedim ikisini karşılaştırma kısmını açıkçası
-    
-    
+    for i,k in liste,liste2:
+        if liste[i]==liste2[k]:
+            dogru_yer_syc += 1
+        elif liste2[k] != liste[i] and liste2[k] in liste:
+            yanlis_yer_syc -= 1
+        elif liste2[k] not in liste:
+            print("yanlis sayi")
+        
+    return dogru_yer_syc, yanlis_yer_syc

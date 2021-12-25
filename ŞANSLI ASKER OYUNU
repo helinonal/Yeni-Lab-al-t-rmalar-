@@ -1,33 +1,34 @@
-# Python code for Josephus Problem
-def Josh(person, k, index):
+#person, insanların listesi
+#k, öldürülmek için atlanacak insan sayısı
+#index, kılıcın ilk verildiği insan
 
-# Base case , when only one person is left
+def sanslı_asker(person, k, index):
+
+# sadece bir kişi varsa
     if len(person) == 1:
             print(person[0])
             return
 
-# find the index of first person which will die
+# ilk ölecek insanı bulalım
     index = ((index+k)%len(person))
 
-# remove the first person which is going to be killed
+# ölen ilk insanı listeden kaldıralım 
     person.pop(index)
 
-# recursive call for n-1 persons
+# n-1 için rekürsif yapı
     Josh(person,k,index)
 
-# Driver Program to test above function
-n = 14 # specific n and k values for original josephus problem
+# denemek için örnek
+n = 14 #
 k = 2
-k-=1 # (k-1)th person will be killed
+k-=1 # (k-1)inci insan öldürülür
 
 index = 0
 
-# fill the person vector
+# person listesini doldur
 person=[]
 for i in range(1,n+1):
     person.append(i)
 
 Josh(person,k,index)
 
-# This code is contributed by
-# Gaurav Kandel

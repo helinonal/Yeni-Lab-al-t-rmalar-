@@ -5,17 +5,16 @@ def mastermind_4bas():
     sayac=0
     while x>0:
         sayac += 1
-    if sayac ==4:
-        continue
-    else:
-        return mastermind_4bas()
+        if sayac !=4:
+            break
+            return mastermind_4bas()
     
     #bilgisayardan dört basamağında da farklı rakam bulunan dört basamaklı bir
     #sayı üretmesini isteyelim.
     
     import random
     birinci = random.choice(range(1,10))
-    geriyekalan = set(range10)) - {birinci}
+    geriyekalan = set(range(0,10)) - {birinci}
     digersayilar = random.sample(geriyekalan,3)
     sayi = [first] + digersayilar                        
 
@@ -43,24 +42,20 @@ def mastermind_4bas():
     dogru_yer_syc = 0
     yanlis_yer_syc = 0
 
-#sayi=1234
-    liste=[]
-    for i in range(1,len(sayi)):
-        liste.append(sayi[i])
-#liste=[1,2,3,4]
-
+#x=1234
     liste2=[]
     for i in range(1,len(str(x))):
         liste2.append(x[i])
-
+#liste2=[1,2,3,4]
+        
     print(liste,liste2) 
 
-    for i,k in liste,liste2:
-        if liste[i]==liste2[k]:
+    for i in range(0,liste2):
+        if sayi[i]==liste2[i]:
             dogru_yer_syc += 1
-        elif liste2[k] != liste[i] and liste2[k] in liste:
+        elif liste2[i] != sayi[i] and liste2[k] in sayi:
             yanlis_yer_syc -= 1
-        elif liste2[k] not in liste:
+        elif liste2[i] not in liste:
             print("yanlis sayi")
         
     return dogru_yer_syc, yanlis_yer_syc 

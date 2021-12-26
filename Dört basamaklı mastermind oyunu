@@ -1,19 +1,26 @@
 def mastermind_4bas():
-    x=input("sayı giriniz")
-#bilgisayardan dört basamağında da farklı rakam bulunan dört basamaklı bir
-#sayı üretmesini isteyelim.
-    for a in range(1,10):
-        for b in range(0,10):
-            if a!=b:
-                for c in range(0,10):
-                    if b!=c and a!=c:
-                        for d in range(0,10):
-                            c!=d and b!=d and a!=d
-                            sayi = str(a)+str(b)+str(c)+str(d)
-                            
+    x=int(input("dört basamaklı rakamları farklı bir sayı giriniz"))
+    
+    #sayı dört basamaklı mı diye kontrol edelim
+    sayac=0
+    while x>0:
+        sayac += 1
+    if sayac ==4:
+        continue
+    else:
+        return mastermind_4bas()
+    
+    #bilgisayardan dört basamağında da farklı rakam bulunan dört basamaklı bir
+    #sayı üretmesini isteyelim.
+    
+    import random
+    birinci = random.choice(range(1,10))
+    geriyekalan = set(range10)) - {birinci}
+    digersayilar = random.sample(geriyekalan,3)
+    sayi = [first] + digersayilar                        
 
 #girilen bu sayıyı rakamları farklı mı diye kontrol edelim.
-
+    
     if x[0] == 0:
         raise Exception("girilen sayının rakamları aynı değil")
         return mastermind_4bas()
@@ -38,13 +45,15 @@ def mastermind_4bas():
 
 #sayi=1234
     liste=[]
-    for i in len(int(sayi)):
+    for i in range(1,len(sayi)):
         liste.append(sayi[i])
 #liste=[1,2,3,4]
 
     liste2=[]
-    for i in len(x):
+    for i in range(1,len(str(x))):
         liste2.append(x[i])
+
+    print(liste,liste2) 
 
     for i,k in liste,liste2:
         if liste[i]==liste2[k]:
@@ -54,4 +63,6 @@ def mastermind_4bas():
         elif liste2[k] not in liste:
             print("yanlis sayi")
         
-    return dogru_yer_syc, yanlis_yer_syc
+    return dogru_yer_syc, yanlis_yer_syc 
+    
+    
